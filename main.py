@@ -27,7 +27,7 @@ def main():
             break
 
 
-def encode(password): # encoder: Ruiwen Xiong
+def encode(password):  # encoder: Ruiwen Xiong, using account RuiwenX
     num_list = []
     num_list[:] = password
     for i in range(len(password)):
@@ -37,3 +37,19 @@ def encode(password): # encoder: Ruiwen Xiong
         new_password += str(letter)
 
     return new_password
+
+
+def decode(password):  # decoded
+    num_list = []
+    num_list[:] = password
+    for i in range(len(password)):
+        num_list[i] = (int(num_list[i]) + 7) % 10
+    new_password = ""
+    for letter in num_list:
+        new_password += str(letter)
+
+    return new_password
+
+
+if __name__ == "__main__":
+    main()
